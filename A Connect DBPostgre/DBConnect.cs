@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace pzmWinFormPostgre
 {
-	internal class DBConnect
+	public class DBConnect
 	{
+
+
 	}
 }
