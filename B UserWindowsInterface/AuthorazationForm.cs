@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace pzmWinFormPostgre
 {
-	public partial class Form1 : Form
+	public partial class AuthorazationForm : Form
 	{
-		public Form1()
+		public AuthorazationForm()
 		{
 			InitializeComponent();
 		}

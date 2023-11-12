@@ -46,13 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="A Connect DBPostgre\DBConnect.cs" />
+    <Compile Include="B UserWindowsInterface\AuthorazationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="B UserWindowsInterface\AuthorazationForm.Designer.cs">
+      <DependentUpon>AuthorazationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="B UserWindowsInterface\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B UserWindowsInterface\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C WindowsContents\Device.cs" />
+    <Compile Include="C WindowsContents\Item.cs" />
+    <Compile Include="C WindowsContents\ParentClassForItemAndDevice.cs" />
+    <Compile Include="B UserWindowsInterface\CreateAndSetDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B UserWindowsInterface\CreateAndSetDevice.Designer.cs">
+      <DependentUpon>CreateAndSetDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="B UserWindowsInterface\CreateAndSetItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B UserWindowsInterface\CreateAndSetItem.Designer.cs">
+      <DependentUpon>CreateAndSetItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="D MainCode\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,5 +98,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
