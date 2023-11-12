@@ -60,7 +60,7 @@ namespace pzmWinFormPostgre
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("Ошибка подключения: " + ex.Message);
+				MessageBox.Show("Ошибка подключения к базе данных");
 			}
 
 		}
