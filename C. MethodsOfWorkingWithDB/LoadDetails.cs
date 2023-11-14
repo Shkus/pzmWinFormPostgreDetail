@@ -32,14 +32,14 @@ namespace pzmWinFormPostgre
 				{
 					// Из БД
 					Device newDevice = new Device(
-						reader["Id"],
-						reader["Name"],
-						reader["Price"],
-						reader["DateAdd"],
-						reader["Manufacture"],
+						reader["device_id"],
+						reader["name_device"],
+						reader["manufacturer_device"],
+						reader["date_release"],
+						reader["size_device"],
+						reader["weight_device"],
 						reader["price_device"],
-						reader["date_added"],
-						reader["manufacturer"]
+						reader["date_added_device"]
 						);
 
 					device.Add(newDevice);

@@ -94,40 +94,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="A Connect DBPostgre\DBConnect.cs" />
-    <Compile Include="B UserWindowsInterface\AuthorizationForm.cs">
+    <Compile Include="A. Connect DBPostgre\DBConnect.cs" />
+    <Compile Include="B. UserWindowsInterface\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="B UserWindowsInterface\AuthorizationForm.Designer.cs">
+    <Compile Include="B. UserWindowsInterface\AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="B UserWindowsInterface\MainForm.cs">
+    <Compile Include="B. UserWindowsInterface\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="B UserWindowsInterface\MainForm.Designer.cs">
+    <Compile Include="B. UserWindowsInterface\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="C WindowsContents\Device.cs" />
-    <Compile Include="C WindowsContents\Item.cs" />
-    <Compile Include="C WindowsContents\ParentClassForItemAndDevice.cs" />
-    <Compile Include="B UserWindowsInterface\CreateAndSetDevice.cs">
+    <Compile Include="D. WindowsContents\Device.cs" />
+    <Compile Include="D. WindowsContents\Item.cs" />
+    <Compile Include="D. WindowsContents\ParentClassForItemAndDevice.cs" />
+    <Compile Include="B. UserWindowsInterface\CreateAndSetDevice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="B UserWindowsInterface\CreateAndSetDevice.Designer.cs">
+    <Compile Include="B. UserWindowsInterface\CreateAndSetDevice.Designer.cs">
       <DependentUpon>CreateAndSetDevice.cs</DependentUpon>
     </Compile>
-    <Compile Include="B UserWindowsInterface\CreateAndSetItem.cs">
+    <Compile Include="B. UserWindowsInterface\CreateAndSetItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="B UserWindowsInterface\CreateAndSetItem.Designer.cs">
+    <Compile Include="B. UserWindowsInterface\CreateAndSetItem.Designer.cs">
       <DependentUpon>CreateAndSetItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="E MainCode\Program.cs" />
-    <Compile Include="C MethodsOfWorkingWithDB\LoadDetails.cs" />
-    <Compile Include="MainContainer.cs" />
+    <Compile Include="E. MainCode\Program.cs" />
+    <Compile Include="C. MethodsOfWorkingWithDB\LoadDetails.cs" />
+    <Compile Include="C. MethodsOfWorkingWithDB\MainContainer.cs" />
+    <Compile Include="C. MethodsOfWorkingWithDB\LoadDeviceInListFromDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="B UserWindowsInterface\AuthorizationForm.resx">
+    <EmbeddedResource Include="B. UserWindowsInterface\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B. UserWindowsInterface\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
