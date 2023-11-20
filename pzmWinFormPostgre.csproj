@@ -107,6 +107,7 @@
     <Compile Include="B. UserWindowsInterface\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="C. MethodsOfWorkingWithDB\LoadItemsInListFromDB.cs" />
     <Compile Include="D. WindowsContents\Device.cs" />
     <Compile Include="D. WindowsContents\Item.cs" />
     <Compile Include="D. WindowsContents\ParentClassForItemAndDevice.cs" />

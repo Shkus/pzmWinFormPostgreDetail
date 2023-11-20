@@ -13,13 +13,14 @@ namespace pzmWinFormPostgre
 		public double Weight { get; private set; }
 
 
-		public Device(object id, object name, object price, object dateAdd, object manufacture, object daterelease, object size, object weight)
-			: base(id, name, price, dateAdd, manufacture)
+		public Device(object id, object name, object manufacture, object daterelease, 
+			object size, object weight, object price, object dateAdd)
+			: base(id, name, manufacture, price, dateAdd)
 		{
+
 			DateRelease = daterelease.ToString();
 			Size = size.ToString();
 			Weight = double.TryParse(weight.ToString(), out double r2) ? r2 : 0;
-
 		}
 	}
 }

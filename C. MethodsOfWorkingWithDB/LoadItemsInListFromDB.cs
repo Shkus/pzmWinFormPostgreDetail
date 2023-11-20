@@ -1,22 +1,20 @@
 ﻿using Npgsql;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace pzmWinFormPostgre
 {
-	public class LoadDeviceInListFromDB
+	public class LoadItemsInListFromDB
 	{
-		//public List<Device> deviceList { get; set; } = new List<Device>();
-		public void LoadDevice(List<Device> deviceList)
+		/// <summary>
+		/// Метод загрузки Деталей из базы данных
+		/// </summary>
+		/// <param name="itemList">список деталей</param>
+		public void LoadItems(List<Item> itemList)
 		{			
 			try
 			{
-				//NpgsqlConnection connection = new NpgsqlConnection();
-
 				string connectionString = "Host=localhost;Port=5432;Database=test_dbCsharpPzm;User Id=postgres;Password=123456789abc";
 				NpgsqlConnection connectionDB = new NpgsqlConnection(connectionString);
 
@@ -26,25 +24,24 @@ namespace pzmWinFormPostgre
 					Connection = connectionDB,
 					CommandType = System.Data.CommandType.Text,
 					CommandTimeout = 3,
-					CommandText = "SELECT * FROM device",
+					CommandText = "SELECT * FROM item",
 				};
 
 				NpgsqlDataReader reader = command.ExecuteReader();
 				while (reader.Read())
 				{
 					// Из БД
-					Device newDevice = new Device(
-						reader["device_id"],
-						reader["name_device"],
-						reader["manufacturer_device"],
-						reader["date_release"],
-						reader["size_device"],
-						reader["weight_device"],
-						reader["price_device"],
-						reader["date_added_device"]
+					Item newItem = new Item(
+						reader["item_id"],
+						reader["name_item"],
+						reader["serialnumber_item"],
+						reader["manufacturer_item"],
+						reader["color_item"],
+						reader["price_item"],
+						reader["date_added_item"]						
 						);
 
-					deviceList.Add(newDevice);
+					itemList.Add(newItem);
 					
 				}
 			}

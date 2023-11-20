@@ -1,42 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+
 
 namespace pzmWinFormPostgre
 {
 	public partial class MainForm : Form
 	{
-		public List<Device> deviceList { get; set; } = new List<Device>();
-		private LoadDeviceInListFromDB LoadDeviceInListFromDB { get; set; } = new LoadDeviceInListFromDB();
-
+		private LoadDeviceInListFromDB LDLFDB { get; set; } = new LoadDeviceInListFromDB();
+		public List<Device> devicesList { get; set; } = new List<Device>();
+		public LoadItemsInListFromDB LILFDB { get; set; } = new LoadItemsInListFromDB();
+		public List<Item> itemsList { get; set; } = new List<Item>();
 
 		public MainForm()
 		{
 			InitializeComponent();
-
-			DGV_loadDetails.DataSource = LoadDeviceInListFromDB.deviceList;
-
 		}
 
-		private void MainForm_Load(object sender, EventArgs e)
+		/// <summary>
+		/// Метод, при загрузке окна обеспечивает загрузку Механизмов и Деталей с отраженим их в DatagridView 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		public void MainForm_Load(object sender, EventArgs e)
 		{
+			LDLFDB.LoadDevice(devicesList);
+			DGV_loadDetails.DataSource = devicesList;
+			LILFDB.LoadItems(itemsList);
+			DGV_loadItem.DataSource = itemsList;
 
-			try
-			{
-				LoadDeviceInListFromDB.LoadDevice(deviceList);
-			}
-			catch (Exception exp)
-			{
-				MessageBox.Show(exp.ToString());
-			}
 		}
 
+		//private void DGV_loadDetails_RowEnter(object sender, DataGridViewCellEventArgs e)
+		//{
+		//	try
+		//	{
+		//		if (e.RowIndex < 0)
+		//			return;
 
+		//		MainContainer.SelectDetal(DGV_Detal.Rows[e.RowIndex].DataBoundItem);
+		//	}
+		//	catch (Exception exp)
+		//	{
+		//		MessageBox.Show(exp.ToString());
+		//	}
+
+		//	/// <summary>
+		//	/// Выбранная деталь из таблицы
+		//	/// </summary>
+		//public Detal SelectedDetal { get; set; }
+
+		///// <summary>
+		///// Устанавливает выбранную деталь
+		///// </summary>
+		///// <param name="detal"></param>
+		//public void SelectDetal(object detal)
+		//{
+		//	SelectedDetal = (Detal)detal;
+		//}
 	}
 }

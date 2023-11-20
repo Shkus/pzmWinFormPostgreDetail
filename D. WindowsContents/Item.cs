@@ -8,14 +8,21 @@ namespace pzmWinFormPostgre
 {
 	public class Item : ParentForItemAndDevice
 	{
-		public string Serialnumber { get; private set; }
-		public string Color { get; private set; }
+		public string SerialNumber { get; set; }
+		public string ColorItem { get; set; }		
 
-		public Item(int id, string name, double price, string dateAdd, string manufacture, object serialnumber, object size, object color)
-			: base(id, name, price, dateAdd, manufacture)
+
+		public Item(object id, object name, object serialnumber, object manufacture, object color, object price, object dateAdd)
+			: base(id, name, manufacture, price, dateAdd)
 		{
-			Serialnumber = serialnumber.ToString();
-			Color = color.ToString();
+			Id = int.TryParse(id.ToString(), out int r1) ? r1 : 0;
+			Name = name.ToString();
+			Manufacture = manufacture.ToString();
+			Price = double.TryParse(price.ToString(), out double r2) ? r2 : 0;
+			DateAdd = dateAdd.ToString();
+			SerialNumber = serialnumber.ToString();
+			ColorItem = color.ToString();
+			
 		}
 
 	}
